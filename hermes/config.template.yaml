@@ -1,0 +1,51 @@
+agent:
+  max_turns: 250
+  reasoning_effort: medium
+  context_compaction: true
+  compaction_threshold: 0.75
+_config_version: 49
+
+security:
+  redact_secrets: true
+  tirith_enabled: false
+  tirith_timeout: 5
+  tirith_fail_open: true
+
+model:
+  default: hermes-default
+  provider: custom
+  base_url: http://localhost:20128/v1
+  api_key: default
+  api_mode: chat_completions
+
+platform_toolsets:
+  cli:
+    - agency_agents
+    - browser
+    - clarify
+    - context_engine
+    - code_execution
+    - connections
+    - cronjob
+    - delegation
+    - file
+    - image_gen
+    - kanban
+    - memory
+    - obsidian
+    - productivity
+    - research
+    - skill_management
+    - system
+    - terminal
+    - todo
+    - web
+
+plugins:
+  enabled:
+    - agency-agents-router
+
+telemetry:
+  shared_metrics:
+    enabled: false
+    send: false
